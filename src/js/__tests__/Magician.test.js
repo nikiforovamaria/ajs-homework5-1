@@ -7,7 +7,9 @@ test('should create magician character', () => {
 });
 
 test('should give an error about name length', () => {
-  const magician = new Magician('M');
   const result = 'Длина имени должна быть минимум 2 символа и максимум 10 символов';
-  expect(magician).toThrow(result);
+  expect(() => {
+    const magician = new Magician('M');
+    return magician;
+  }).toThrow(result);
 });

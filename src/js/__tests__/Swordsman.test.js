@@ -7,7 +7,9 @@ test('should create swordsman character', () => {
 });
 
 test('should give an error about name length', () => {
-  const swordsman = new Swordsman('M');
   const result = 'Длина имени должна быть минимум 2 символа и максимум 10 символов';
-  expect(swordsman).toThrow(result);
+  expect(() => {
+    const swordsman = new Swordsman('M');
+    return swordsman;
+  }).toThrow(result);
 });

@@ -7,7 +7,9 @@ test('should create daemon character', () => {
 });
 
 test('should give an error about name length', () => {
-  const daemon = new Daemon('M');
   const result = 'Длина имени должна быть минимум 2 символа и максимум 10 символов';
-  expect(daemon).toThrow(result);
+  expect(() => {
+    const daemon = new Daemon('M');
+    return daemon;
+  }).toThrow(result);
 });

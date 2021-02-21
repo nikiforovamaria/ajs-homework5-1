@@ -7,7 +7,9 @@ test('should create undead character', () => {
 });
 
 test('should give an error about name length', () => {
-  const undead = new Undead('M');
   const result = 'Длина имени должна быть минимум 2 символа и максимум 10 символов';
-  expect(undead).toThrow(result);
+  expect(() => {
+    const undead = new Undead('M');
+    return undead;
+  }).toThrow(result);
 });

@@ -7,7 +7,9 @@ test('should create bowman character', () => {
 });
 
 test('should give an error about name length', () => {
-  const bowman = new Bowman('M');
   const result = 'Длина имени должна быть минимум 2 символа и максимум 10 символов';
-  expect(bowman).toThrow(result);
+  expect(() => {
+    const bowman = new Bowman('M');
+    return bowman;
+  }).toThrow(result);
 });
